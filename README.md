@@ -47,8 +47,8 @@ Save the `.ipynb` file (e.g., `us_constitution_qa_bot.ipynb`).
 
 ### Set Up Environment
 
-**Locally:**  
-```bash
+Locally: 
+
 pip install jupyter
 jupyter notebook us_constitution_qa_bot.ipynb
 
@@ -57,7 +57,7 @@ jupyter notebook us_constitution_qa_bot.ipynb
 On Colab: Upload the notebook and select a GPU runtime (Runtime > Change runtime type > GPU).
 
 
-Install Dependencies:
+### Install Dependencies:
 
 The first notebook cell installs required packages:
 unsloth, transformers, fastapi, uvicorn, streamlit, pyngrok, torch, etc.
@@ -67,7 +67,7 @@ Run the cell to install everything (may take a few minutes).
 
 
 
-Configuration
+### Configuration
 
 Set Ngrok Tokens:
 
@@ -78,7 +78,7 @@ STREAMLIT_NGROK_TOKEN = "your_streamlit_ngrok_token_here"
 Use your actual tokens from ngrok.
 
 
-Update FastAPI URL in Streamlit:
+### Update FastAPI URL in Streamlit:
 
 After running the FastAPI cell, it outputs a public ngrok URL (e.g., https://xxxx.ngrok-free.app).
 In the %%writefile app.py cell, update:FASTAPI_URL = "your_fastapi_ngrok_url_here"
@@ -88,7 +88,7 @@ Re-run the %%writefile app.py cell to save the change.
 
 
 
-Running the Notebook
+## Running the Notebook
 
 Execute Cells:
 
@@ -103,7 +103,7 @@ Start Streamlit (on port 8501) with ngrok tunnel.
 
 
 
-Outputs:
+### Outputs:
 
 FastAPI:✅ FastAPI running locally at http://localhost:8000
 🌐 FastAPI ngrok URL: https://xxxx.ngrok-free.app
@@ -120,7 +120,7 @@ Open this URL in a browser for the chat interface.
 
 
 
-Using the Bot:
+## Using the Bot:
 
 Access the Streamlit URL.
 Enter questions (e.g., "What is the First Amendment?").
@@ -128,7 +128,7 @@ Responses stream word-by-word.
 Chat history is preserved in the session.
 
 
-Stopping the Notebook:
+### Stopping the Notebook:
 
 Interrupt the kernel (Jupyter: Kernel > Interrupt; Colab: Stop execution).
 Ngrok tunnels close automatically.
@@ -136,7 +136,7 @@ If tunnels persist, terminate them via the ngrok dashboard.
 
 
 
-Troubleshooting
+### Troubleshooting
 
 Installation Issues:
 
