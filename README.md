@@ -71,8 +71,8 @@ Run the cell to install everything (may take a few minutes).
 
 Set Ngrok Tokens:
 
-In the notebook, replace placeholders:FASTAPI_NGROK_TOKEN = "your_fastapi_ngrok_token_here"
-STREAMLIT_NGROK_TOKEN = "your_streamlit_ngrok_token_here"
+- In the notebook, replace placeholders:FASTAPI_NGROK_TOKEN = "your_fastapi_ngrok_token_here"
+- STREAMLIT_NGROK_TOKEN = "your_streamlit_ngrok_token_here"
 
 
 Use your actual tokens from ngrok.
@@ -80,8 +80,8 @@ Use your actual tokens from ngrok.
 
 ### Update FastAPI URL in Streamlit:
 
-After running the FastAPI cell, it outputs a public ngrok URL (e.g., https://xxxx.ngrok-free.app).
-In the %%writefile app.py cell, update:FASTAPI_URL = "your_fastapi_ngrok_url_here"
+- After running the FastAPI cell, it outputs a public ngrok URL (e.g., https://xxxx.ngrok-free.app).
+- In the %%writefile app.py cell, update:FASTAPI_URL = "your_fastapi_ngrok_url_here"
 
 
 Re-run the %%writefile app.py cell to save the change.
@@ -90,55 +90,55 @@ Re-run the %%writefile app.py cell to save the change.
 
 ## Running the Notebook
 
-Execute Cells:
+### Execute Cells:
 
-Run cells sequentially (Shift + Enter).
+- Run cells sequentially (Shift + Enter).
 Steps:
-Install dependencies.
-Load model and tokenizer from Hugging Face.
-Start FastAPI server (on port 8000) with ngrok tunnel.
-Write app.py for Streamlit.
-Start Streamlit (on port 8501) with ngrok tunnel.
+- Install dependencies.
+- Load model and tokenizer from Hugging Face.
+- Start FastAPI server (on port 8000) with ngrok tunnel.
+- Write app.py for Streamlit.
+- Start Streamlit (on port 8501) with ngrok tunnel.
 
 
 
 
 ### Outputs:
 
-FastAPI:✅ FastAPI running locally at http://localhost:8000
-🌐 FastAPI ngrok URL: https://xxxx.ngrok-free.app
+- FastAPI:✅ FastAPI running locally at http://localhost:8000
+- 🌐 FastAPI ngrok URL: https://xxxx.ngrok-free.app
 
 
-Copy the ngrok URL and update FASTAPI_URL in app.py.
+- Copy the ngrok URL and update FASTAPI_URL in app.py.
 
 
-Streamlit:🌐 Streamlit ngrok URL: https://yyyy.ngrok-free.app
+- Streamlit:🌐 Streamlit ngrok URL: https://yyyy.ngrok-free.app
 
 
-Open this URL in a browser for the chat interface.
+- Open this URL in a browser for the chat interface.
 
 
 
 
 ## Using the Bot:
 
-Access the Streamlit URL.
-Enter questions (e.g., "What is the First Amendment?").
-Responses stream word-by-word.
-Chat history is preserved in the session.
+- Access the Streamlit URL.
+- Enter questions (e.g., "What is the First Amendment?").
+- Responses stream word-by-word.
+- Chat history is preserved in the session.
 
 
 ### Stopping the Notebook:
 
-Interrupt the kernel (Jupyter: Kernel > Interrupt; Colab: Stop execution).
-Ngrok tunnels close automatically.
-If tunnels persist, terminate them via the ngrok dashboard.
+- Interrupt the kernel (Jupyter: Kernel > Interrupt; Colab: Stop execution).
+- Ngrok tunnels close automatically.
+- If tunnels persist, terminate them via the ngrok dashboard.
 
 
 
 ### Troubleshooting
 
-Installation Issues:
+- Installation Issues:
 
 Package conflicts: Use a virtual environment:python -m venv env
 source env/bin/activate
@@ -148,20 +148,20 @@ pip install -r requirements.txt  # List packages from notebook
 Colab: Ensure GPU runtime is enabled.
 
 
-Model Loading:
+- Model Loading:
 
 "Out of Memory": Reduce max_new_tokens or use a higher-VRAM GPU.
 CPU fallback is slower but works if no GPU is available.
 
 
-Ngrok Issues:
+- Ngrok Issues:
 
 "Invalid auth token": Verify tokens in ngrok dashboard.
 "Tunnel limit reached": Free ngrok accounts have limits; wait or upgrade.
 Use separate tokens for FastAPI and Streamlit.
 
 
-Server Issues:
+- Server Issues:
 
 FastAPI not responding: Test locally with:curl -X POST http://localhost:8000/generate -H "Content-Type: application/json" -d '{"question": "Test question"}'
 
@@ -169,7 +169,7 @@ FastAPI not responding: Test locally with:curl -X POST http://localhost:8000/gen
 Streamlit errors: Check console logs or ensure FASTAPI_URL is correct.
 
 
-Response Quality:
+- Response Quality:
 
 Model is fine-tuned for US Constitution; off-topic questions may yield poor results.
 Adjust max_new_tokens, temperature, or top_p in ask_model for better responses.
